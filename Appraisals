@@ -33,6 +33,7 @@ plugin "appraisal2-rubocop", require: "appraisal2/rubocop", optional: true
 #    - Matches what contributors and maintainers use locally for development
 #    - Broken workflow indicates that a new contributor will have a bad time
 #
+
 appraise "unlocked_deps" do
   # Seems to be an undeclared dependency of yard.
   # /opt/hostedtoolcache/Ruby/4.0.0/x64/lib/ruby/gems/4.0.0/gems/yard-0.9.38/lib/yard/parser/ruby/legacy/irb/slex.rb:13: warning: irb/notifier is found in irb, which is not part of the default gems since Ruby 4.0.0.
@@ -57,23 +58,14 @@ appraise "unlocked_deps" do
   eval_gemfile "modular/x_std_libs.gemfile"
 end
 
-# Used for head (nightly) releases of ruby, truffleruby, and jruby.
-# Split into discrete appraisals if one of them needs a dependency locked discretely.
 appraise "head" do
   eval_gemfile "modular/x_std_libs.gemfile"
-  gem "mutex_m", ">= 0.2"
-  gem "stringio", ">= 3.0"
 end
 
-# Used for current releases of ruby, truffleruby, and jruby.
-# Split into discrete appraisals if one of them needs a dependency locked discretely.
 appraise "current" do
   eval_gemfile "modular/x_std_libs.gemfile"
-  gem "mutex_m", ">= 0.2"
-  gem "stringio", ">= 3.0"
 end
 
-# Test current Rubies against head versions of runtime dependencies
 appraise "dep-heads" do
   eval_gemfile "modular/runtime_heads.gemfile"
 end
@@ -87,71 +79,51 @@ end
 
 appraise "ruby-2-6" do
   eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
 end
 
 appraise "ruby-2-7" do
   eval_gemfile "modular/x_std_libs/r2/libs.gemfile"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
 end
 
 appraise "ruby-3-0" do
   eval_gemfile "modular/json/truffleruby_22_3.gemfile"
   eval_gemfile "modular/json/truffleruby_23_0.gemfile"
   eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
 end
 
 appraise "ruby-3-1" do
   eval_gemfile "modular/x_std_libs/r3.1/libs.gemfile"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
 end
 
 appraise "ruby-3-2" do
   eval_gemfile "modular/json/truffleruby_23_1.gemfile"
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
 end
 
 appraise "ruby-3-3" do
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
 end
 
 appraise "ruby-3-4" do
   eval_gemfile "modular/x_std_libs/r3/libs.gemfile"
 end
 
-# Only run security audit on latest Ruby version
 appraise "audit" do
   eval_gemfile "modular/x_std_libs.gemfile"
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
   eval_gemfile "modular/audit.gemfile"
 end
 
-# Only run coverage on latest Ruby version
 appraise "coverage" do
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
   eval_gemfile "modular/coverage.gemfile"
   eval_gemfile "modular/optional.gemfile"
   eval_gemfile "modular/x_std_libs.gemfile"
 end
 
-# Only run linter on latest Ruby version (but, in support of oldest supported Ruby version)
 appraise "style" do
-  gem "mutex_m", "~> 0.2"
-  gem "stringio", "~> 3.0"
   eval_gemfile "modular/style.gemfile"
   eval_gemfile "modular/x_std_libs.gemfile"
 end
+
 appraise "templating" do
   eval_gemfile "modular/templating.gemfile"
   eval_gemfile "modular/x_std_libs.gemfile"

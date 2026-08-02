@@ -650,14 +650,14 @@ files:
     recipe: template_source_application_Appraisal_root_gemfile
     action: write
     dest_sha256: 8724e3f6faea995be655ac49369bec64a70710112b1f65707fa38f1fd2fd3254
-    input_fingerprint: 7d9c46de20392b52d0df208f887ae2851f9e039f5610b989109242da30672f7d
+    input_fingerprint: 5088de1a80d236128fa0d19dce587c75fc7b67bbacab72c243e155407b6d6727
     template_sources:
     - Appraisal.root.gemfile.example
   Appraisals:
     recipe: template_source_application_Appraisals
     action: write
-    dest_sha256: ef5ef54199b58a1bb34751b924d687b47b90e957da8fba8ad5221f0cf65c7ee2
-    input_fingerprint: b56330428a458f15063e0473ac6228cc17dcaa04994abb1fd3eebccc14c04354
+    dest_sha256: 1f6debb589f101d8abbc8571e2f98325bdf5f8289546e3b745ace4ffcaf28e8e
+    input_fingerprint: 7df0037c581e69ea0978294b38037d83a15c24118399219c36e2646b08c1c885
     template_sources:
     - Appraisals.example
   CHANGELOG.md:
