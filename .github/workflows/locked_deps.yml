@@ -21,14 +21,17 @@ permissions:
   contents: read
 
 env:
-  KITCHEN_SINK: true
-  K_SOUP_COV_MIN_BRANCH: 30
-  K_SOUP_COV_MIN_LINE: 88
+  # Running coverage, but not validating minimum coverage,
+  #   because it would be redundant with the coverage workflow.
+  # Also we can validate all output formats without breaking CodeCov,
+  #   since we aren't submitting these reports anywhere.
+  K_SOUP_COV_MIN_BRANCH: 10
+  K_SOUP_COV_MIN_LINE: 40
   K_SOUP_COV_MIN_HARD: false
-  K_SOUP_COV_FORMATTERS: "html,rcov,lcov,tty"
+  K_SOUP_COV_FORMATTERS: "html,xml,rcov,lcov,json,tty"
   K_SOUP_COV_DO: true
   K_SOUP_COV_MULTI_FORMATTERS: true
-  K_SOUP_COV_COMMAND_NAME: "MiniTest Coverage"
+  K_SOUP_COV_COMMAND_NAME: "Test Coverage"
 
 on:
   push:
@@ -51,8 +54,8 @@ concurrency:
 
 jobs:
   test:
+    if: "github.event_name != 'push' || (!contains(github.event.head_commit.message, '[ci skip]') && !contains(github.event.head_commit.message, '[skip ci]'))"
     name: Default rake task w/ main Gemfile.lock ${{ matrix.name_extra || '' }}
-    if: ${{ !contains(github.event.commits[0].message, '[ci skip]') && !contains(github.event.commits[0].message, '[skip ci]') }}
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental }}
     strategy:
@@ -68,15 +71,19 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Setup Ruby & RubyGems
-        uses: ruby/setup-ruby@v1
+        uses: appraisal-rb/setup-ruby-flash@b22cb587431e9611d9e0a624a43872e2bbfbcd66 # v2.0
         with:
           ruby-version: ${{ matrix.ruby }}
           rubygems: ${{ matrix.rubygems }}
           bundler: ${{ matrix.bundler }}
           bundler-cache: true
+          manual-compatibility-bundle: true
+          gem-install-retries: 7
 
       - name: Checks the kitchen sink via ${{ matrix.exec_cmd }}
         run: bundle exec ${{ matrix.exec_cmd }}

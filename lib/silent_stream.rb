@@ -8,9 +8,9 @@ require "logger" # as of Ruby 3.5
 
 # External gems
 require "version_gem"
+require_relative "silent_stream/version"
 
 # This gem
-require_relative "silent_stream/version"
 
 module SilentStream
   def self.included(base)
@@ -95,7 +95,7 @@ module SilentStream
       old_stream = stream.dup
       begin
         stream.reopen(SILENT_STREAM_NULL_DEVICE, "a+")
-      rescue StandardError => e
+      rescue => e
         stream.puts "[SilentStream] Unable to silence. #{e.class}: #{e.message}"
       end
       stream.sync = true
@@ -134,7 +134,7 @@ module SilentStream
       origin_io_dup = io_const.dup
       begin
         io_const.reopen(captured_stream)
-      rescue StandardError => e
+      rescue => e
         io_const.puts "[SilentStream] Unable to capture. #{e.class}: #{e.message}"
       end
       io_const.sync = true
@@ -148,7 +148,7 @@ module SilentStream
 
       begin
         io_const.flush
-      rescue StandardError
+      rescue
         # ignore
       end
       captured_stream.rewind
@@ -157,7 +157,7 @@ module SilentStream
       begin
         io_const.reopen(origin_io_dup) if defined?(io_const) && io_const
         origin_io_dup.close if defined?(origin_io_dup) && origin_io_dup
-      rescue StandardError
+      rescue
         # ignore
       end
       # Unexpected, and not reasonably testable.

@@ -1,0 +1,56 @@
+{
+  "- 50.00% documented\n### Changed": [
+    {
+      "file": "CHANGELOG.md",
+      "lines": [
+        115,
+        126
+      ]
+    }
+  ],
+  "// Use 'forwardPorts' to make a list of ports inside the container available locally.\n// \"forwardPorts\": [],": [
+    {
+      "file": ".devcontainer/devcontainer.json",
+      "lines": [
+        11,
+        22
+      ]
+    }
+  ],
+  "bench_files = Dir[File.join(__dir__, \"benchmarks\", \"*.rb\")].sort\nif bench_files.empty?": [
+    {
+      "file": "Rakefile",
+      "lines": [
+        379,
+        396
+      ]
+    }
+  ],
+  "data = JSON.parse(res.body)\nrun = data[\"workflow_runs\"]&.first": [
+    {
+      "file": "Rakefile",
+      "lines": [
+        523,
+        549
+      ]
+    }
+  ],
+  "if bench_files.empty?\nputs \"No benchmark scripts found under benchmarks/.\"": [
+    {
+      "file": "Rakefile",
+      "lines": [
+        380,
+        397
+      ]
+    }
+  ],
+  "req = Net::HTTP::Get.new(uri)\nreq[\"User-Agent\"] = \"ci:act rake task\"": [
+    {
+      "file": "Rakefile",
+      "lines": [
+        515,
+        666
+      ]
+    }
+  ]
+}

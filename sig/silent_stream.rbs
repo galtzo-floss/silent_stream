@@ -37,8 +37,12 @@ module SilentStream
     SILENT_STREAM_REGEXP_HAS_MATCH: bool
     def windows_os_test: () -> (bool | Integer)
   end
+
+  module Version
+    VERSION: String
+  end
+  VERSION: String
 end
 
 module SilentStream::Version
 end
-

@@ -55,6 +55,7 @@ class MyException < RuntimeError; end
 
 class MyClass
   include SilentStream
+
   class << self
     def quiet_log(switch, level, logger)
       silence_all(switch, level, logger) do
@@ -223,7 +224,7 @@ class KernelExtraTest < SilentStream::TestCase
   def test_null_device_expression_evaluates_in_context_for_coverage
     file = File.expand_path("../lib/silent_stream.rb", __dir__)
     # Force execution credited to line 70 in the source file
-    result = eval("Gem.win_platform? ? 'NUL:' : '/dev/null'", binding, file, 70)
+    result = eval("Gem.win_platform? ? 'NUL:' : '/dev/null'", binding, __FILE__, __LINE__)
     assert_includes(["NUL:", "/dev/null"], result)
   end
 end

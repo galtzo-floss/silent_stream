@@ -13,7 +13,7 @@ require "erb"
 # BRANCH_RULE_TYPE = jira, or another type of branch rule validation, or false to disable
 # FOOTER_APPEND = true/false append commit message footer
 BRANCH_RULES = {
-  "jira" => /^(?<story_type>(hotfix)|(bug)|(feature)|(candy))\/(?<story_id>\d{8,})-.+\Z/,
+  "jira" => /^(?<story_type>(hotfix)|(bug)|(feature)|(candy))\/(?<story_id>\d{8,})-.+\Z/
 }
 BRANCH_RULE_TYPE = (validate = ENV.fetch("GIT_HOOK_BRANCH_VALIDATE", "false")) && !validate.casecmp?("false") && validate
 
@@ -23,7 +23,7 @@ if (branch_rule = BRANCH_RULES[BRANCH_RULE_TYPE])
   #	<story_type>/<story_id>-explosion-in-the-fudge-factory-spec-suite-fix
   #	where story type is one of "hotfix", "bug", "feature", "candy"
   #
-  branch = %x(git branch 2> /dev/null | grep -e ^* | awk '{print $2}')
+  branch = `git branch 2> /dev/null | grep -e ^* | awk '{print $2}'`
   match_data = branch.match(branch_rule)
   # NOTE: `match` will return nil if match fails, otherwise an instance of MatchData.
   # If not nil then we are assured matches for both regex capture groups
@@ -124,7 +124,7 @@ class GitCommitFooter
       if @name_index
         return $2
       end
-    rescue StandardError
+    rescue
       # fall through
     end
     nil
