@@ -163,10 +163,6 @@ Gem::Specification.new do |spec|
   # spec.add_development_dependency("vcr", ">= 4")                        # 6.0 claims to support ruby >= 2.3, but fails on ruby 2.4
   # spec.add_development_dependency("webmock", ">= 3")                    # Last version to support ruby >= 2.3
   spec.add_development_dependency("erb", ">= 2.2")                            # ruby >= 2.3.0, not SemVer, old rubies get dropped in a patch.
-  spec.add_development_dependency("minitest", ">= 5.15")                      # ruby >= 2.2, later releases are ruby >= 2.6+
-  spec.add_development_dependency("minitest-reporters", "~> 1.7", ">= 1.7.1") # ruby >= 1.9.3
-  spec.add_development_dependency("mocha", "~> 2.7", ">= 2.7.1")              # ruby >= 2.1
   spec.add_development_dependency("ruby_engine", "~> 2.0", ">= 2.0.3")        # ruby >= 0
   spec.add_development_dependency("ruby_version", "~> 1.0", ">= 1.0.3")       # ruby >= 0
-  spec.add_development_dependency("test-unit", ">= 3.7")                      # ruby >= 0
 end
