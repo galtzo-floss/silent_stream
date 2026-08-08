@@ -137,6 +137,11 @@ gem install silent_stream
 
 ## ⚙️ Configuration
 
+There is no global configuration. Include or extend `SilentStream::Extracted`
+where the four stream helpers are needed, or include `SilentStream` when
+`silence_all` is also required. Set `NO_SILENCE=true` to bypass silencing while
+debugging or running a CI job.
+
 ## 🔧 Basic Usage
 
 Four standard methods you may be familiar with from ActiveSupport's previous implementation are provided:
