@@ -3,8 +3,17 @@
     {
       "file": "CHANGELOG.md",
       "lines": [
-        127,
-        138
+        126,
+        137
+      ]
+    }
+  ],
+  "- configuration (1)\n- dependencies (8)": [
+    {
+      "file": "CHANGELOG.md",
+      "lines": [
+        47,
+        51
       ]
     }
   ],
@@ -21,8 +30,8 @@
     {
       "file": "Rakefile",
       "lines": [
-        395,
-        412
+        399,
+        416
       ]
     }
   ],
@@ -30,8 +39,8 @@
     {
       "file": "Rakefile",
       "lines": [
-        539,
-        565
+        543,
+        569
       ]
     }
   ],
@@ -39,8 +48,8 @@
     {
       "file": "Rakefile",
       "lines": [
-        396,
-        413
+        400,
+        417
       ]
     }
   ],
@@ -48,8 +57,8 @@
     {
       "file": "Rakefile",
       "lines": [
-        531,
-        682
+        535,
+        686
       ]
     }
   ]
