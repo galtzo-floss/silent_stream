@@ -91,7 +91,7 @@
     [79, 22, 6, "Style/GlobalStdStream: Use `$stderr` instead of `STDERR`.", 3356712163],
     [129, 23, 4, "Lint/LtsRuby/UnavailableMethod: Set#to_s is unavailable before Ruby 2.5.", 2087961426]
   ],
-  "silent_stream.gemspec:3429696142": [
+  "silent_stream.gemspec:2886528065": [
     [45, 24, 9, "Lint/LtsRuby/UnavailableMethod: Symbol#end_with? is unavailable before Ruby 2.7.", 308216808],
     [51, 16, 16, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 3147164910],
     [52, 16, 19, "Lint/LtsRuby/UnavailableMethod: Matrix/Vector#[]= is unavailable before Ruby 2.6.", 279056797],
