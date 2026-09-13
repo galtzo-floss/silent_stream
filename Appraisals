@@ -75,6 +75,7 @@ appraise "ruby-2-4" do
 end
 
 appraise "ruby-2-5" do
+  eval_gemfile "modular/x_std_libs/r2.6/libs.gemfile"
 end
 
 appraise "ruby-2-6" do
