@@ -10,9 +10,9 @@
   
 </title>
 
-  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="css/common.css" type="text/css" />
+  <link rel="stylesheet" href="css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "silent_stream";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="file_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -94,8 +96,14 @@ private
 
 SILENT_STREAM_WINDOWS_REGEXP: Regexp
 SILENT_STREAM_REGEXP_HAS_MATCH: bool
-def windows_os_test: () -&gt; (bool | Integer)   end end
+def windows_os_test: () -&gt; (bool | Integer)   end
 </code></pre>
+
+<p>module Version<br>
+    VERSION: String<br>
+  end<br>
+  VERSION: String<br>
+end</p>
 
 <p>module SilentStream::Version<br>
 end</p>
