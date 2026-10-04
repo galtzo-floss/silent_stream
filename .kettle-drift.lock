@@ -1,13 +1,4 @@
 {
-  "- 50.00% documented\n### Changed": [
-    {
-      "file": "CHANGELOG.md",
-      "lines": [
-        132,
-        143
-      ]
-    }
-  ],
   "// Use 'forwardPorts' to make a list of ports inside the container available locally.\n// \"forwardPorts\": [],": [
     {
       "file": ".devcontainer/devcontainer.json",
@@ -21,8 +12,8 @@
     {
       "file": "Rakefile",
       "lines": [
-        403,
-        420
+        405,
+        422
       ]
     }
   ],
@@ -30,8 +21,8 @@
     {
       "file": "Rakefile",
       "lines": [
-        547,
-        573
+        549,
+        575
       ]
     }
   ],
@@ -48,8 +39,8 @@
     {
       "file": "Rakefile",
       "lines": [
-        404,
-        421
+        406,
+        423
       ]
     }
   ],
@@ -57,8 +48,8 @@
     {
       "file": "Rakefile",
       "lines": [
-        539,
-        690
+        541,
+        692
       ]
     }
   ]
