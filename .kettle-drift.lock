@@ -1,4 +1,13 @@
 {
+  "- ruby: \"ruby\"\nappraisal: \"current\"": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        40,
+        46
+      ]
+    }
+  ],
   "// Use 'forwardPorts' to make a list of ports inside the container available locally.\n// \"forwardPorts\": [],": [
     {
       "file": ".devcontainer/devcontainer.json",
@@ -12,8 +21,17 @@
     {
       "file": "Rakefile",
       "lines": [
-        405,
-        422
+        413,
+        430
+      ]
+    }
+  ],
+  "config: .licenserc.yaml\nmode: \"check\"": [
+    {
+      "file": ".github/workflows/license-eye.yml",
+      "lines": [
+        49,
+        62
       ]
     }
   ],
@@ -21,8 +39,8 @@
     {
       "file": "Rakefile",
       "lines": [
-        549,
-        575
+        557,
+        583
       ]
     }
   ],
@@ -39,8 +57,8 @@
     {
       "file": "Rakefile",
       "lines": [
-        406,
-        423
+        414,
+        431
       ]
     }
   ],
@@ -48,8 +66,8 @@
     {
       "file": "Rakefile",
       "lines": [
-        541,
-        692
+        549,
+        700
       ]
     }
   ]
