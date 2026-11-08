@@ -2,9 +2,6 @@
   "bin/prepare-commit-msg:60574733": [
     [16, 13, 76, "Lint/MixedRegexpCaptureTypes: Do not mix named captures and numbered captures in a Regexp literal.", 1400492948]
   ],
-  "gemfiles/modular/style_local.gemfile:803618203": [
-    [71, 23, 20, "Style/SafeNavigation: Use safe navigation (`&.`) instead of checking if an object exists before calling the method.", 1851388465]
-  ],
   "lib/silent_stream.rb:2403318326": [
     [40, 26, 6, "Style/GlobalStdStream: Use `$stdout` instead of `STDOUT`.", 3356722952],
     [71, 27, 6, "Style/FileNull: Use `File::NULL` instead of `NUL:`.", 3177874952],
