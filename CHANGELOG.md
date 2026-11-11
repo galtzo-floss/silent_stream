@@ -128,10 +128,6 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260728-004 - Generated dep-heads workflows now use the
   setup-ruby Bundler install path for direct appraisal Gemfiles, avoiding rv
   lockfile parser failures on Git and path dependencies.
-- kettle-jem-template-20260729-001 - Generated JRuby 9.4 workflows now use the
-  legacy manual bundle install path, avoiding setup-time Bundler full-index
-  failures against `gem.coop`.
-
 ## [1.0.12] - 2025-08-21
 
 - TAG: [v1.0.12][1.0.12t]
